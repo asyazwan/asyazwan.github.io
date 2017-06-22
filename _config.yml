@@ -9,7 +9,7 @@
 locale                   : "en"
 title                    : "Mind dump"
 title_separator          : "-"
-name                     : "asyazwan"
+name                     : "Ahmad Syazwan"
 description              : "Manifesting thoughts."
 url                      : https://ibnusani.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
