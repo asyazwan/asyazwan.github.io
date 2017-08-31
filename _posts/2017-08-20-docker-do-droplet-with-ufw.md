@@ -80,7 +80,9 @@ To                         Action      From
 2376/tcp (v6)              ALLOW       Anywhere (v6)
 ```
 
-The two unexpected ports are for orchestration with `docker-machine` / swarm so that the docker clients can communicate with each other. Feel free to remove them if you won't be using them. Test container connectivity:
+The two unexpected ports are for orchestration with `docker-machine` / swarm so that the docker clients can communicate with each other. Feel free to remove them if you won't be using them. 
+
+Test container connectivity:
 
 ```bash
 root@docker-test:~# docker run --rm -it busybox ping 8.8.8.8 -c 4
@@ -115,7 +117,8 @@ Status: Downloaded newer image for nginx:alpine
 71f90fc2d8e013283d71e1dbff9ea65ea46d9d09a66e171a595b9b63e5c4103d
 ```
 
-And from your browser or local terminal:
+Then test connectivity from your browser or local terminal:
+
 ```bash
 syaz@mbp:~$ curl -I http://<droplet-IP>:30000/
 HTTP/1.1 200 OK
