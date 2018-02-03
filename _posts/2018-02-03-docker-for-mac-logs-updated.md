@@ -1,7 +1,7 @@
 ---
 title: "Docker for Mac logs (updated)"
 categories: article
-tags: dev docker xhyve linuxkit
+tags: dev docker linuxkit
 ---
 
 Some time last month new docker for mac [shipped with LinuxKit](https://docs.docker.com/docker-for-mac/release-notes/#docker-community-edition-17120-ce-mac46-2018-01-09-stable):
