@@ -4,6 +4,9 @@ categories: article
 tags: dev docker xhyve
 ---
 
+Edit Feb 2018: New docker for mac uses LinuxKit doesn't have syslogd running by default (as of this time of writing). More info [here](/docker-for-mac-logs-updated).
+{: .notice--warning}
+
 When docker [ditched](https://blog.docker.com/2016/05/docker-unikernels-open-source/) Alpine for [xhyve](https://github.com/mist64/xhyve), I didn't know how to get into docker itself to eg. see logs.
 
 > The xhyve hypervisor is a port of bhyve to OS X. It is built on top of Hypervisor.framework in OS X 10.10 Yosemite and higher, runs entirely in userspace, and has no other dependencies.
