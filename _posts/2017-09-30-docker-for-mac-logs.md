@@ -4,7 +4,7 @@ categories: article
 tags: dev docker xhyve
 ---
 
-Edit Feb 2018: New docker for mac uses LinuxKit doesn't have syslogd running by default (as of this time of writing). More info [here](/docker-for-mac-logs-updated).
+Edit Feb 2018: New docker for mac uses LinuxKit doesn't have syslogd running by default (as of this time of writing). More info [here](/article/docker-for-mac-logs-updated/).
 {: .notice--warning}
 
 When docker [ditched](https://blog.docker.com/2016/05/docker-unikernels-open-source/) Alpine for [xhyve](https://github.com/mist64/xhyve), I didn't know how to get into docker itself to eg. see logs.
