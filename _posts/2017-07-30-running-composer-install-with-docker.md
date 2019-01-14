@@ -31,4 +31,4 @@ This will most likely happen everytime because of missing platform requirements 
 
 `docker run --rm -v $PWD:/app composer/composer:alpine install --ignore-platform-reqs`
 
-Another option is to define `platform` in your config to mirror yout target platform settings. It can be tedious the more specific you get, though. See [example](https://getcomposer.org/doc/06-config.md#platform) syntax from the docs.
+Another option is to define `platform` in your config to mirror your target platform settings. It can be tedious the more specific you get, though. See [example](https://getcomposer.org/doc/06-config.md#platform) syntax from the docs.
