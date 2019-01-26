@@ -1,5 +1,5 @@
 ---
-title: “PHP cURL segfault”
+title: PHP cURL segfault
 categories: article
 tags: dev curl php
 ---
