@@ -18,9 +18,14 @@ I covered this in a [previous post](https://ibnusani.com/article/php-curl-segfau
 ## When a package is not available
 Developers at work needed to use PHP [V8js](http://php.net/manual/en/book.v8js.php) for our experimental branch so I had to get the extension for our alpine-based images. Someone got through most of the trouble for me as he detailed the findings in this Github [gist](https://gist.github.com/tylerchr/15a74b05944cfb90729db6a51265b6c9). Basically we had to compile [GN](https://gn.googlesource.com/gn/), download v8 source, and then build it against musl. Even with the steps laid out, it wasn't a smooth experience. This method is not sustainable for us, considering future updates and patches.
 
+## Syslog limit
+Developers rely heavily on app logs via syslog (mounted `/dev/log`) and Alpine uses busybox [syslog](https://wiki.alpinelinux.org/wiki/Syslog) by default. The problem is, messages are truncated at 1024-character limit, which is very small. The root issue is musl has hardcoded limit of 1024 syslog buffer, which is a generous increase from the initial [256](https://git.musl-libc.org/cgit/musl/commit/src/misc/syslog.c?id=3f65494a4cb2544eb16af3fa64a161bd8142f487)(!) limit but still not enough. This doesn't make sense as a default, and I could not find a way to configure this _easily_.
+
 ## Final straw
 Ubuntu officially launched minimal ubuntu images for cloud / container use around [July](https://blog.ubuntu.com/2018/07/09/minimal-ubuntu-released) last year.
 
 > These images are less than 50% the size of the standard Ubuntu server image, and boot up to 40% faster.
 
 Not only the base image just 29MB in size, but you also get to use all apt packages! All our previous problems with Alpine made it very easy to switch to ubuntu as our base image and we have been satisfied with the switch so far. This in not to say Alpine is not good. It's just not a fit for us.
+
+### Edit: I need to clarify that this post is not about what's the better alternative. Rather, it's about ditching Alpine. There are definitely few good alternatives to ubuntu-minimal. :)
