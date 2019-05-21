@@ -10,6 +10,8 @@ I have tried *everything* suggested from disabling Gatekeeper to many many itera
 
 What worked for me finally was: [macos - VirtualBox 5.2 Won't Install on Mac OS 10.13 - Ask Different](https://apple.stackexchange.com/a/360123/332949) which boils down to:
 
+Go into recovery mode (reboot with Cmd + R during loading screen) and open the terminal:
+
 ```
 spctl kext-consent disable
 spctl kext-consent add VB5E2TV963
