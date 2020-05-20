@@ -208,6 +208,13 @@ compress_html:
   ignore:
     envs: development
 
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
 
 # Defaults
 defaults:
