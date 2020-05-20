@@ -34,6 +34,15 @@ command3: # Unlisted command
 3. `sort` to get alphabetically sorted output
 4. `awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-15s\033[0m %s\n", $$1, $$2}'`:
   - pipe the lines through `awk` and set the [`FS`](https://www.gnu.org/software/gawk/manual/html_node/Field-Separators.html) field separator to be whatever between the command and help text (modify `##` if you want different separator)
-  - for each match print with [color](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors): `\033[36m%-15s\033[0m %s\n` so we will get command in cyan, [padded](https://www.gnu.org/software/gawk/manual/html_node/Format-Modifiers.html) with 15 spaces, followed by the help text
+  - for each match print with [color](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors): `\033[36m%-15s\033[0m %s\n` so we will get command, [padded](https://www.gnu.org/software/gawk/manual/html_node/Format-Modifiers.html) with 15 spaces, followed by the help text
   - again since we're inside make escape `$1` & `$2` for column number with `$$1` & `$$2`
 5. For commands you don't want to be listed as `help` output, simply don't comment or use single `#` like `command3` example
+
+
+## Output
+
+```sh
+$ make
+command1        Alias of command2
+command2        run command2
+```
